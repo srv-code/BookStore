@@ -1,24 +1,24 @@
 import { createStackNavigator } from 'react-navigation-stack';
 import React from 'react';
-import Header from '../shared/header';
-import About from '../screens/about';
+import Header from '../shared/components/header';
+import Books from '../screens/books';
 
 const screens = {
   About: {
-    screen: About,
+    screen: Books,
     navigationOptions: ({ navigation }) => {
       return {
-        headerTitle: () => <Header title='GameZone' navigation={navigation} />
-      }
+        headerTitle: () => <Header title='Books' navigation={navigation} />,
+      };
     },
   },
-}
+};
 
-const AboutStack = createStackNavigator(screens, {
+const booksStack = createStackNavigator(screens, {
   defaultNavigationOptions: {
     headerTintColor: '#444',
     headerStyle: { backgroundColor: '#eee', height: 60 },
-  }
+  },
 });
 
-export default AboutStack;
+export default booksStack;

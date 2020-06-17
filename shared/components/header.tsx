@@ -2,9 +2,14 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
-export default function Header({ title, navigation }) {
+interface HeaderProps {
+  title: string;
+  navigation: any;
+}
+
+export default function header(props: HeaderProps) {
   const openMenu = () => {
-    navigation.openDrawer();
+    props.navigation.openDrawer();
   };
 
   return (
@@ -22,7 +27,7 @@ export default function Header({ title, navigation }) {
           source={require('../assets/images/app-logo.png')}
           style={styles.headerImage}
         />
-        <Text style={styles.headerText}>{title}</Text>
+        <Text style={styles.headerText}>{props.title}</Text>
       </View>
     </ImageBackground>
   );
