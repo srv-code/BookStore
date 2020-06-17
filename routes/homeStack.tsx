@@ -1,6 +1,6 @@
 import { createStackNavigator } from 'react-navigation-stack';
 import React from 'react';
-import Header from '../shared/components/header';
+import Header from '../shared/components/header/header';
 import Home from '../screens/home';
 
 interface NavigationOptionProps {

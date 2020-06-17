@@ -2,12 +2,12 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { CardItem, Card, Text, Body, Button } from 'native-base';
 
-interface GenreCardProps {
+interface GenreListCardProps {
   genreList: string[];
   onGenreSelect: (text: string) => void;
 }
 
-export default function genreCard(props: GenreCardProps) {
+export default function genreListCard(props: GenreListCardProps) {
   let itemIdx = 0;
   const colorSet = [
     'brown',
@@ -26,7 +26,7 @@ export default function genreCard(props: GenreCardProps) {
   return (
     <Card>
       <CardItem header bordered>
-        <Text style={styles.genreText}>Genre</Text>
+        <Text style={styles.genreText}>Genres</Text>
       </CardItem>
       <CardItem bordered>
         <Body style={styles.cardBody}>

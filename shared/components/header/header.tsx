@@ -21,7 +21,7 @@ export default function header(props: HeaderProps) {
         style={styles.icon}
       />
       <Image
-        source={require('../../assets/images/app-logo.gif')}
+        source={require('../../../assets/images/app-logo.gif')}
         style={styles.headerImage}
       />
       <View style={styles.headerTitle}>
