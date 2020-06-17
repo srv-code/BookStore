@@ -14,7 +14,7 @@ export default function header(props: HeaderProps) {
 
   return (
     <ImageBackground
-      source={require('../assets/images/header-bg.png')}
+      source={require('../../assets/images/header-bg.png')}
       style={styles.header}>
       <MaterialIcons
         name='menu'
@@ -24,7 +24,7 @@ export default function header(props: HeaderProps) {
       />
       <View style={styles.headerTitle}>
         <Image
-          source={require('../assets/images/app-logo.png')}
+          source={require('../../assets/images/app-logo.png')}
           style={styles.headerImage}
         />
         <Text style={styles.headerText}>{props.title}</Text>
