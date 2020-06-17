@@ -1,15 +1,15 @@
 import { createStackNavigator } from 'react-navigation-stack';
 import React from 'react';
 import Header from '../shared/components/header';
-import About from '../screens/cart';
+import Cart from '../screens/cart';
 
 interface NavigationOptionProps {
   navigation: any;
 }
 
 const screens = {
-  About: {
-    screen: About,
+  Cart: {
+    screen: Cart,
     navigationOptions: (props: NavigationOptionProps) => {
       return {
         headerTitle: () => (

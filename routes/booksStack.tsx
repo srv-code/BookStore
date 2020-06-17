@@ -8,7 +8,7 @@ interface NavigationOptionProps {
 }
 
 const screens = {
-  About: {
+  Books: {
     screen: Books,
     navigationOptions: (props: NavigationOptionProps) => {
       return {

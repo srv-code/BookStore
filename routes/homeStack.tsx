@@ -1,15 +1,15 @@
 import { createStackNavigator } from 'react-navigation-stack';
 import React from 'react';
 import Header from '../shared/components/header';
-import About from '../screens/home';
+import Home from '../screens/home';
 
 interface NavigationOptionProps {
   navigation: any;
 }
 
 const screens = {
-  About: {
-    screen: About,
+  Home: {
+    screen: Home,
     navigationOptions: (props: NavigationOptionProps) => {
       return {
         headerTitle: () => (
