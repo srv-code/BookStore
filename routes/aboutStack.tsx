@@ -3,12 +3,18 @@ import React from 'react';
 import Header from '../shared/components/header';
 import About from '../screens/about';
 
+interface NavigationOptionProps {
+  navigation: any;
+}
+
 const screens = {
   About: {
     screen: About,
-    navigationOptions: ({ navigation }) => {
+    navigationOptions: (props: NavigationOptionProps) => {
       return {
-        headerTitle: () => <Header title='About' navigation={navigation} />,
+        headerTitle: () => (
+          <Header title='About' navigation={props.navigation} />
+        ),
       };
     },
   },
