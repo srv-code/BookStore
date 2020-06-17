@@ -13,23 +13,21 @@ export default function header(props: HeaderProps) {
   };
 
   return (
-    <ImageBackground
-      source={require('../../assets/images/header-bg.png')}
-      style={styles.header}>
+    <View style={styles.header}>
       <MaterialIcons
         name='menu'
         size={28}
         onPress={openMenu}
         style={styles.icon}
       />
+      <Image
+        source={require('../../assets/images/app-logo.gif')}
+        style={styles.headerImage}
+      />
       <View style={styles.headerTitle}>
-        <Image
-          source={require('../../assets/images/app-logo.png')}
-          style={styles.headerImage}
-        />
         <Text style={styles.headerText}>{props.title}</Text>
       </View>
-    </ImageBackground>
+    </View>
   );
 }
 
@@ -55,8 +53,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   headerImage: {
-    width: 26,
-    height: 26,
-    marginHorizontal: 10,
+    width: 32,
+    height: 32,
+    marginHorizontal: 15,
   },
 });
