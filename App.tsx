@@ -7,6 +7,7 @@ const getFonts = () =>
   Font.loadAsync({
     'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
     'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf'),
+    'Roboto_medium': require('./assets/fonts/Roboto-Medium.ttf'),
   });
 
 export default function App() {
