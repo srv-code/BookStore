@@ -27,7 +27,14 @@ export default function topCollectionList(props: TopCollectionListProps) {
         />
       </View>
 
-      <BookCard onCartAdd={() => console.log('added to cart')} />
+      <BookCard
+        onCartAdd={() => console.log('added to cart')}
+        title='Book Title'
+        // coverImageURI='../../../../assets/images/book-cover-sample.jpg'
+        author='Book Author'
+        price={12.99}
+        rating={2.5}
+      />
     </View>
   );
 }
