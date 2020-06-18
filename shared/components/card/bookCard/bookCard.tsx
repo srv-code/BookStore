@@ -17,18 +17,15 @@ interface BookCardProps {
 
 export default function bookCard(props: BookCardProps) {
   const coverImageURI = require('../../../../assets/images/book-cover-sample.jpg');
-  
+
   return (
     <Card>
       <CardItem cardBody>
-        <Image
-          source={coverImageURI}
-          style={styles.coverImage}
-        />
+        <Image source={coverImageURI} style={styles.coverImage} />
       </CardItem>
       <CardItem style={styles.infoCard}>
         <Text style={styles.title}>{props.title}</Text>
-        <Text style={styles.author}>by Author</Text>
+      <Text style={styles.author}>by {props.author}</Text>
         <View style={styles.priceView}>
           <Icon type='Foundation' style={styles.priceImage} name='dollar' />
           <Text style={styles.priceText}>{props.price}</Text>
