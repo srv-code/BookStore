@@ -91,3 +91,69 @@ export function getBooksByGenre(genre: string, cutoff?: number): Book[] {
 
   return [];
 }
+
+// dummy implementaion
+export function getBookInfo(bookId: number): Book {
+  switch (bookId) {
+    case 1:
+      return {
+        id: 1,
+        genre: 'Fiction',
+        title: 'The Paying Guests',
+        author: 'Waters, Sarah',
+        rating: 5,
+        price: 20.45,
+      };
+
+    case 2:
+      return {
+        id: 2,
+        genre: 'Fiction',
+        title: 'A Tale Of Two Cities',
+        author: 'Dickens, Charles',
+        rating: 4.5,
+        price: 31.75,
+      };
+
+    case 3:
+      return {
+        id: 3,
+        genre: 'Fiction',
+        title: 'A Town Like Alice',
+        author: 'Shute, Nevil',
+        rating: 3.5,
+        price: 17.82,
+      };
+
+    case 4:
+      return {
+        id: 4,
+        genre: 'Business & Economics',
+        title: 'The art of war',
+        author: 'Abc Def',
+        rating: 5,
+        price: 27.65,
+      };
+
+    case 5:
+      return {
+        id: 5,
+        genre: 'Business & Economics',
+        title: 'Awakening to Your Life Purpose',
+        author: 'Abc Def',
+        rating: 4.5,
+        price: 35.55,
+      };
+
+    case 6:
+      return {
+        id: 6,
+        genre: 'Business & Economics',
+        title: 'Power of Your Subconscious Mind',
+        author: 'Abc Def',
+        rating: 2,
+        price: 17.99,
+      };
+  }
+  return null;
+}

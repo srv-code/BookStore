@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, ScrollView } from 'react-native';
 import { globalStyles } from '../shared/styles/globalStyles';
 import { getBooksByGenre } from '../apis/fetchBookDetails';
 import BookCardList from '../shared/components/list/bookCardList/bookCardList';
-import { Container, Content } from 'native-base';
+import { Container } from 'native-base';
 
 interface BooksProps {
   navigation: any;
@@ -29,7 +29,7 @@ export default function books(props: BooksProps) {
         </View>
 
         <View style={styles.listContainer}>
-          <BookCardList books={allBooks} />
+          <BookCardList showCartAddButton books={allBooks} />
         </View>
       </View>
     </Container>

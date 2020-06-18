@@ -28,8 +28,8 @@ export default function home(props: HomeProps) {
             onGenreSelect={openGenreBookListHandler}
           />
 
-          <View style={{ alignItems: 'center' }}>
-            <Text style={styles.textTopCollections}>Top Collections</Text>
+          <View style={globalStyles.headerTitleView}>
+            <Text style={globalStyles.headerTitleText}>Top Collections</Text>
           </View>
 
           {genreList.map((genre: string, idx: number) => {
@@ -57,7 +57,7 @@ export default function home(props: HomeProps) {
                   />
                 </View>
 
-                <BookCardList horizontal books={topBooks} />
+                <BookCardList horizontal showCartAddButton books={topBooks} />
               </View>
             );
           })}
@@ -68,28 +68,6 @@ export default function home(props: HomeProps) {
 }
 
 export const styles = StyleSheet.create({
-  textTopCollections: {
-    backgroundColor: 'dodgerblue',
-    color: 'white',
-    textAlign: 'center',
-    textAlignVertical: 'center',
-    height: 50,
-    width: 300,
-    marginTop: 10,
-    // marginBottom: 7,
-    borderRadius: 50,
-    fontSize: 30,
-
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.22,
-    shadowRadius: 2.22,
-    elevation: 3,
-  },
-
   arrowImage: {
     textAlignVertical: 'center',
   },

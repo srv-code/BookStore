@@ -40,6 +40,31 @@ export const globalStyles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  headerTitleText: {
+    backgroundColor: 'dodgerblue',
+    color: 'white',
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    height: 50,
+    width: 300,
+    marginTop: 10,
+    // marginBottom: 7,
+    borderRadius: 50,
+    fontSize: 30,
+
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+    elevation: 3,
+  },
+  headerTitleView: { 
+    alignItems: 'center',
+    marginBottom: 10,
+  }
 });
 
 export const defaultNavigationOptions = {
