@@ -26,7 +26,7 @@ export function getBookGenres(): string[] {
 
 // dummy implementaion
 // sends an array of book of upto cutoff count in descending order of rating
-export function getBooks(genre: string, cutoff: number): Book[] {
+export function getBooksByGenre(genre: string, cutoff: number): Book[] {
   switch (genre) {
     case 'Fiction':
       return [
@@ -44,7 +44,7 @@ export function getBooks(genre: string, cutoff: number): Book[] {
           genre: 'Fiction',
           title: 'Abc Def Ghi',
           author: 'Abc Def',
-          rating: 4,
+          rating: 4.5,
           price: 31.75,
         },
 
@@ -53,7 +53,7 @@ export function getBooks(genre: string, cutoff: number): Book[] {
           genre: 'Fiction',
           title: 'Abc Def Ghi',
           author: 'Abc Def',
-          rating: 3,
+          rating: 3.5,
           price: 17.82,
         },
       ];
@@ -74,7 +74,7 @@ export function getBooks(genre: string, cutoff: number): Book[] {
           genre: 'Business & Economics',
           title: 'The 7 Keys to Success: Awakening to Your Life Purpose',
           author: 'Abc Def',
-          rating: 5,
+          rating: 4.5,
           price: 35.55,
         },
 
@@ -83,7 +83,7 @@ export function getBooks(genre: string, cutoff: number): Book[] {
           genre: 'Business & Economics',
           title: 'The Power of Your Subconscious Mind',
           author: 'Abc Def',
-          rating: 3,
+          rating: 2,
           price: 17.99,
         },
       ];
