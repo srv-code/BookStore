@@ -9,7 +9,11 @@ interface BookCardListProps {
 }
 
 export default function bookCardList(props: BookCardListProps) {
-  console.log(`bookCardList: will load book list: %O`, props.books);
+  // console.log(
+  //   `bookCardList: %O, will load?: %O`,
+  //   props.books,
+  //   props.books.length > 0
+  // );
 
   return (
     <View>

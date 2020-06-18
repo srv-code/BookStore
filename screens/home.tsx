@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Container, Content, Icon, Text } from 'native-base';
 import { StyleSheet, View, ScrollView } from 'react-native';
 import GenreListCard from '../components/cards/genreListCard/genreListCard';
-import TopCollectionList from '../components/cards/topCollectionList/topCollectionList';
 import { globalStyles } from '../shared/styles/globalStyles';
 import { getBookGenres, getBooksByGenre, Book } from '../apis/bookList';
 import BookCardList from '../shared/components/list/bookCardList/bookCardList';
@@ -31,7 +30,10 @@ export default function home(props: HomeProps) {
 
           {genreList.map((genre: string, idx: number) => {
             const topBooks: Book[] = getBooksByGenre(genre, 3);
-            console.log(`top books of ${genre} genre: %o`, topBooks);
+            // console.log(`top books of ${genre} genre: %o`, topBooks);
+
+            if(topBooks.length == 0) 
+              return null;
 
             return (
               <View key={idx}>
@@ -48,8 +50,6 @@ export default function home(props: HomeProps) {
               </View>
             );
           })}
-
-          {/* <TopCollectionList /> */}
         </Content>
       </ScrollView>
     </Container>
