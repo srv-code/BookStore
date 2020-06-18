@@ -2,21 +2,33 @@ import React from 'react';
 import { StyleSheet, Image, View } from 'react-native';
 import { Card, CardItem, Text, Button, Icon } from 'native-base';
 import { Rating } from 'react-native-ratings';
+import { Book } from '../../../../apis/fetchBookDetails';
+import {
+  addBookToCart,
+  removeBookFromCart,
+} from '../../../../apis/updatePurchaseDetails';
 
 interface BookCardProps {
-  coverImageURI?: string;
-  title: string;
-  author: string;
-  price: number;
-  rating: number;
-
-  onCartAdd?: () => void;
-  onCartRemove?: () => void;
-  onPay?: () => void;
+  book: Book;
+  showCartAddButton?: boolean;
+  showCartRemoveButton?: boolean;
+  showPayButton?: boolean;
 }
 
 export default function bookCard(props: BookCardProps) {
   const coverImageURI = require('../../../../assets/images/book-cover-sample.jpg');
+
+  const addToCartHandler = (bookId: number) => {
+    addBookToCart(bookId);
+  };
+
+  const removeFromCartHandler = (bookId: number) => {
+    removeBookFromCart(bookId);
+  };
+
+  const purchaseHandler = (bookId: number) => {
+    console.log(`Purchased book: bookId=${bookId}`);
+  };
 
   return (
     <Card style={styles.cardContainer}>
@@ -24,17 +36,17 @@ export default function bookCard(props: BookCardProps) {
         <Image source={coverImageURI} style={styles.coverImage} />
       </CardItem>
       <CardItem style={styles.infoCard}>
-        <Text style={styles.title}>{props.title}</Text>
-        <Text style={styles.author}>by {props.author}</Text>
+        <Text style={styles.title}>{props.book.title}</Text>
+        <Text style={styles.author}>by {props.book.author}</Text>
         <View style={styles.priceView}>
           <Icon type='Foundation' style={styles.priceImage} name='dollar' />
-          <Text style={styles.priceText}>{props.price}</Text>
+          <Text style={styles.priceText}>{props.book.price}</Text>
         </View>
 
         <View style={styles.ratingView}>
           <Rating
             type='star'
-            startingValue={props.rating}
+            startingValue={props.book.rating}
             ratingCount={5}
             imageSize={40}
             // showRating
@@ -44,22 +56,31 @@ export default function bookCard(props: BookCardProps) {
       </CardItem>
 
       <CardItem style={styles.buttonCard}>
-        {props.onCartAdd && (
-          <Button iconLeft style={styles.button}>
+        {props.showCartAddButton && (
+          <Button
+            iconLeft
+            style={styles.button}
+            onPress={() => addToCartHandler(props.book.id)}>
             <Icon name='cart' />
             <Text>Add to cart</Text>
           </Button>
         )}
 
-        {props.onPay && (
-          <Button iconLeft style={styles.button}>
+        {props.showPayButton && (
+          <Button
+            iconLeft
+            style={styles.button}
+            onPress={() => purchaseHandler(props.book.id)}>
             <Icon type='MaterialIcons' name='payment' />
             <Text>Continue & Pay</Text>
           </Button>
         )}
 
-        {props.onCartRemove && (
-          <Button iconLeft style={styles.button}>
+        {props.showCartRemoveButton && (
+          <Button
+            iconLeft
+            style={styles.button}
+            onPress={() => removeFromCartHandler(props.book.id)}>
             <Icon type='MaterialIcons' name='remove-shopping-cart' />
             <Text>Remove from cart</Text>
           </Button>

@@ -14,7 +14,7 @@ interface HomeProps {
 export default function home(props: HomeProps) {
   const openGenreBookListHandler = (genre: string, color: string) => {
     // console.log(`Opening ${genre} genre book list`);
-    props.navigation.push('Books', {genre: genre, color: color});
+    props.navigation.push('Books', { genre: genre, color: color });
   };
 
   const genreList = getBookGenres();

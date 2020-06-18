@@ -27,7 +27,6 @@ export default function header(props: HeaderProps) {
         ios='ios-menu'
         android='md-menu'
         fontSize={28}
-        
         style={{ position: 'absolute', left: 16, color: 'gray' }}
         onPress={openMenu}
       />
@@ -71,6 +70,6 @@ const styles = StyleSheet.create({
     // width: 32,
     // height: 32,
     marginRight: 10,
-    color: 'gray'
+    color: 'gray',
   },
 });

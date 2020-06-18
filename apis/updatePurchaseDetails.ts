@@ -8,11 +8,11 @@ let purchaseDetails: PurchaseDetails = {
 };
 
 // dummy implementaion
-export function addToCart(bookId: number): void {
+export function addBookToCart(bookId: number): void {
   purchaseDetails.bookIds.push(bookId);
 }
 
 // dummy implementaion
-export function removeFromCart(bookId: number): void {
+export function removeBookFromCart(bookId: number): void {
   purchaseDetails.bookIds = purchaseDetails.bookIds.filter(id => id != bookId);
 }

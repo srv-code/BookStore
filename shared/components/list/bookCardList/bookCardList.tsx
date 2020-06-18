@@ -26,16 +26,7 @@ export default function bookCardList(props: BookCardListProps) {
           style={styles.list}
           keyExtractor={(item: Book) => item.id.toString()}
           data={props.books}
-          renderItem={({ item }) => (
-            <BookCard
-              onCartAdd={() => console.log('book added to cart: %O', item)}
-              title={item.title}
-              // coverImageURI='../../../../assets/images/book-cover-sample.jpg
-              author={item.author}
-              price={item.price}
-              rating={item.rating}
-            />
-          )}
+          renderItem={({ item }) => <BookCard showCartAddButton book={item} />}
         />
       )}
     </View>
