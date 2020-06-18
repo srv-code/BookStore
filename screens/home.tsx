@@ -5,6 +5,7 @@ import GenreListCard from '../components/cards/genreListCard/genreListCard';
 import { globalStyles } from '../shared/styles/globalStyles';
 import { getBookGenres, getBooksByGenre, Book } from '../apis/bookList';
 import BookCardList from '../shared/components/list/bookCardList/bookCardList';
+import { colorSet } from '../shared/styles/globalStyles';
 
 interface HomeProps {}
 
@@ -31,14 +32,21 @@ export default function home(props: HomeProps) {
           {genreList.map((genre: string, idx: number) => {
             const topBooks: Book[] = getBooksByGenre(genre, 3);
             // console.log(`top books of ${genre} genre: %o`, topBooks);
-
-            if(topBooks.length == 0) 
-              return null;
+            if (topBooks.length == 0) return null;
+            const genreColor = colorSet[idx % colorSet.length];
+            // console.log(`idx=${idx}, genreColor=${genreColor}`);
 
             return (
               <View key={idx}>
                 <View style={styles.topGenreHeader}>
-                  <Text style={styles.topGenreHeaderText}>{genre}</Text>
+                  <Text
+                    style={{
+                      color: genreColor,
+                      borderColor: genreColor,
+                      ...styles.topGenreHeaderText,
+                    }}>
+                    {genre}
+                  </Text>
                   <Icon
                     name='arrow-forward'
                     style={styles.arrowImage}
@@ -86,7 +94,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   topGenreHeaderText: {
-    borderColor: 'red',
     borderWidth: 1,
     borderRadius: 4,
     padding: 5,
@@ -94,7 +101,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     justifyContent: 'center',
     alignItems: 'center',
-    color: 'red',
   },
   arrowImage: {
     textAlignVertical: 'center',

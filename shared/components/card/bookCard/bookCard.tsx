@@ -19,7 +19,7 @@ export default function bookCard(props: BookCardProps) {
   const coverImageURI = require('../../../../assets/images/book-cover-sample.jpg');
 
   return (
-    <Card>
+    <Card style={styles.cardContainer}>
       <CardItem cardBody>
         <Image source={coverImageURI} style={styles.coverImage} />
       </CardItem>
@@ -70,6 +70,10 @@ export default function bookCard(props: BookCardProps) {
 }
 
 const styles = StyleSheet.create({
+  cardContainer: {
+    // height: 350,
+    // width: 200,
+  },
   coverImage: {
     height: 200,
     width: null,

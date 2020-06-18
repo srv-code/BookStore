@@ -4,7 +4,7 @@ export const colorSet = [
   'brown',
   'blueviolet',
   'cadetblue',
-  'chartreuse',
+  'yellowgreen',
   'chocolate',
   'coral',
   'cornflowerblue',

@@ -33,8 +33,8 @@ export function getBooksByGenre(genre: string, cutoff: number): Book[] {
         {
           id: 1,
           genre: 'Fiction',
-          title: 'Abc Def Ghi',
-          author: 'Abc Def',
+          title: 'The Paying Guests',
+          author: 'Waters, Sarah',
           rating: 5,
           price: 20.45,
         },
@@ -42,8 +42,8 @@ export function getBooksByGenre(genre: string, cutoff: number): Book[] {
         {
           id: 2,
           genre: 'Fiction',
-          title: 'Abc Def Ghi',
-          author: 'Abc Def',
+          title: 'A Tale Of Two Cities',
+          author: 'Dickens, Charles',
           rating: 4.5,
           price: 31.75,
         },
@@ -51,8 +51,8 @@ export function getBooksByGenre(genre: string, cutoff: number): Book[] {
         {
           id: 3,
           genre: 'Fiction',
-          title: 'Abc Def Ghi',
-          author: 'Abc Def',
+          title: 'A Town Like Alice',
+          author: 'Shute, Nevil',
           rating: 3.5,
           price: 17.82,
         },
@@ -72,7 +72,7 @@ export function getBooksByGenre(genre: string, cutoff: number): Book[] {
         {
           id: 5,
           genre: 'Business & Economics',
-          title: 'The 7 Keys to Success: Awakening to Your Life Purpose',
+          title: 'Awakening to Your Life Purpose',
           author: 'Abc Def',
           rating: 4.5,
           price: 35.55,
@@ -81,7 +81,7 @@ export function getBooksByGenre(genre: string, cutoff: number): Book[] {
         {
           id: 6,
           genre: 'Business & Economics',
-          title: 'The Power of Your Subconscious Mind',
+          title: 'Power of Your Subconscious Mind',
           author: 'Abc Def',
           rating: 2,
           price: 17.99,

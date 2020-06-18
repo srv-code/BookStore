@@ -19,7 +19,7 @@ export default function genreListCard(props: GenreListCardProps) {
       <CardItem bordered>
         <Body style={styles.cardBody}>
           {props.genreList.map((name: string, idx: number) => {
-            let color = colorSet[itemIdx % colorSet.length];
+            const color = colorSet[itemIdx % colorSet.length];
 
             return (
               <Button
