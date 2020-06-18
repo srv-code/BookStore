@@ -5,7 +5,7 @@ import { colorSet } from '../../../shared/styles/globalStyles';
 
 interface GenreListCardProps {
   genreList: string[];
-  onGenreSelect: (text: string) => void;
+  onGenreSelect: (genre: string, color: string) => void;
 }
 
 export default function genreListCard(props: GenreListCardProps) {
@@ -27,7 +27,7 @@ export default function genreListCard(props: GenreListCardProps) {
                 rounded
                 bordered
                 style={{ margin: 4, borderColor: color }}
-                onPress={() => props.onGenreSelect(name)}>
+                onPress={() => props.onGenreSelect(name, color)}>
                 <Text uppercase={false} style={{ color: color }}>
                   {name}
                 </Text>

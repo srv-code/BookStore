@@ -2,6 +2,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import React from 'react';
 import Header from '../shared/components/header/header';
 import Books from '../screens/books';
+import { defaultNavigationOptions } from '../shared/styles/globalStyles';
 
 interface NavigationOptionProps {
   navigation: any;
@@ -21,10 +22,7 @@ const screens = {
 };
 
 const booksStack = createStackNavigator(screens, {
-  defaultNavigationOptions: {
-    headerTintColor: '#444',
-    headerStyle: { backgroundColor: '#eee', height: 60 },
-  },
+  defaultNavigationOptions: defaultNavigationOptions,
 });
 
 export default booksStack;

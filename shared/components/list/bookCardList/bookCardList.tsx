@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, FlatList, View } from 'react-native';
-import { Book } from '../../../../apis/bookList';
+import { Book } from '../../../../apis/fetchBookDetails';
 import BookCard from '../../card/bookCard/bookCard';
 
 interface BookCardListProps {
@@ -44,6 +44,7 @@ export default function bookCardList(props: BookCardListProps) {
 
 const styles = StyleSheet.create({
   list: {
+    // flex: 1,
     width: '100%',
   },
 });

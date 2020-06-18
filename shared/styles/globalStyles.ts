@@ -25,4 +25,24 @@ export const globalStyles = StyleSheet.create({
     // borderColor: 'blue',
     // borderWidth: 2,
   },
+  topGenreHeader: {
+    marginTop: 10,
+    flexDirection: 'row',
+    width: '100%',
+    justifyContent: 'space-between',
+  },
+  topGenreHeaderText: {
+    borderWidth: 1,
+    borderRadius: 4,
+    padding: 5,
+    marginVertical: 10,
+    fontSize: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
+
+export const defaultNavigationOptions = {
+  headerTintColor: '#444',
+  headerStyle: { backgroundColor: '#eee', height: 80 },
+};

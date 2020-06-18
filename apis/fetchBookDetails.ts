@@ -26,7 +26,7 @@ export function getBookGenres(): string[] {
 
 // dummy implementaion
 // sends an array of book of upto cutoff count in descending order of rating
-export function getBooksByGenre(genre: string, cutoff: number): Book[] {
+export function getBooksByGenre(genre: string, cutoff?: number): Book[] {
   switch (genre) {
     case 'Fiction':
       return [

@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
 import { Container, Content, Icon, Text } from 'native-base';
 import { StyleSheet, View, ScrollView } from 'react-native';
-import GenreListCard from '../components/cards/genreListCard/genreListCard';
 import { globalStyles } from '../shared/styles/globalStyles';
-import { getBookGenres, getBooksByGenre, Book } from '../apis/bookList';
-import BookCardList from '../shared/components/list/bookCardList/bookCardList';
+import { getBookGenres, getBooksByGenre, Book } from '../apis/fetchBookDetails';
 import { colorSet } from '../shared/styles/globalStyles';
+import GenreListCard from '../components/cards/genreListCard/genreListCard';
+import BookCardList from '../shared/components/list/bookCardList/bookCardList';
 
-interface HomeProps {}
+interface HomeProps {
+  navigation: any;
+}
 
 export default function home(props: HomeProps) {
-  const openGenreBookListHandler = (genre: string) => {
-    console.log(`Opening ${genre} genre book list`);
-    
+  const openGenreBookListHandler = (genre: string, color: string) => {
+    // console.log(`Opening ${genre} genre book list`);
+    props.navigation.push('Books', {genre: genre, color: color});
   };
 
   const genreList = getBookGenres();
@@ -39,19 +41,19 @@ export default function home(props: HomeProps) {
 
             return (
               <View key={idx}>
-                <View style={styles.topGenreHeader}>
+                <View style={globalStyles.topGenreHeader}>
                   <Text
                     style={{
                       color: genreColor,
                       borderColor: genreColor,
-                      ...styles.topGenreHeaderText,
+                      ...globalStyles.topGenreHeaderText,
                     }}>
                     {genre}
                   </Text>
                   <Icon
                     name='arrow-forward'
                     style={styles.arrowImage}
-                    onPress={() => openGenreBookListHandler(genre)}
+                    onPress={() => openGenreBookListHandler(genre, genreColor)}
                   />
                 </View>
 
@@ -65,7 +67,7 @@ export default function home(props: HomeProps) {
   );
 }
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   textTopCollections: {
     backgroundColor: 'dodgerblue',
     color: 'white',
@@ -88,21 +90,6 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
 
-  topGenreHeader: {
-    marginTop: 10,
-    flexDirection: 'row',
-    width: '100%',
-    justifyContent: 'space-between',
-  },
-  topGenreHeaderText: {
-    borderWidth: 1,
-    borderRadius: 4,
-    padding: 5,
-    marginVertical: 10,
-    fontSize: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   arrowImage: {
     textAlignVertical: 'center',
   },
