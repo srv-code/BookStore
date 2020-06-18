@@ -10,8 +10,9 @@ import { colorSet } from '../shared/styles/globalStyles';
 interface HomeProps {}
 
 export default function home(props: HomeProps) {
-  const genreSelectHandler = (name: string) => {
-    console.log(`selected genre: ${name}`);
+  const openGenreBookListHandler = (genre: string) => {
+    console.log(`Opening ${genre} genre book list`);
+    
   };
 
   const genreList = getBookGenres();
@@ -22,7 +23,7 @@ export default function home(props: HomeProps) {
         <Content padder>
           <GenreListCard
             genreList={genreList}
-            onGenreSelect={genreSelectHandler}
+            onGenreSelect={openGenreBookListHandler}
           />
 
           <View style={{ alignItems: 'center' }}>
@@ -50,7 +51,7 @@ export default function home(props: HomeProps) {
                   <Icon
                     name='arrow-forward'
                     style={styles.arrowImage}
-                    onPress={() => console.log(`Show all ${genre} genre items`)}
+                    onPress={() => openGenreBookListHandler(genre)}
                   />
                 </View>
 
