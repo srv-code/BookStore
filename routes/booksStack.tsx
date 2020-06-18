@@ -13,7 +13,7 @@ const screens = {
     navigationOptions: (props: NavigationOptionProps) => {
       return {
         headerTitle: () => (
-          <Header title='Books' navigation={props.navigation} />
+          <Header title='Books' iconName='book' navigation={props.navigation} />
         ),
       };
     },

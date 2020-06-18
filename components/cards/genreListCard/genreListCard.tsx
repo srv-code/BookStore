@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { CardItem, Card, Text, Body, Button } from 'native-base';
+import { colorSet } from '../../../shared/styles/globalStyles';
 
 interface GenreListCardProps {
   genreList: string[];
@@ -9,19 +10,6 @@ interface GenreListCardProps {
 
 export default function genreListCard(props: GenreListCardProps) {
   let itemIdx = 0;
-  const colorSet = [
-    'brown',
-    'blueviolet',
-    'cadetblue',
-    'chartreuse',
-    'chocolate',
-    'coral',
-    'cornflowerblue',
-    'darkblue',
-    'darkgoldenrod',
-    'darkcyan',
-    'dodgerblue',
-  ];
 
   return (
     <Card>

@@ -13,7 +13,11 @@ const screens = {
     navigationOptions: (props: NavigationOptionProps) => {
       return {
         headerTitle: () => (
-          <Header title='About' navigation={props.navigation} />
+          <Header
+            title='About'
+            iconName='md-information-circle'
+            navigation={props.navigation}
+          />
         ),
       };
     },

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Container, Content, Badge, Text } from 'native-base';
 import { StyleSheet, View, ScrollView } from 'react-native';
-import GenreListCard from '../components/cards/genreListCard';
+import GenreListCard from '../components/cards/genreListCard/genreListCard';
+import TopCollectionList from '../components/cards/topCollectionList/topCollectionList';
 import { globalStyles } from '../shared/styles/globalStyles';
 import { getBookGenres } from '../apis/bookList';
 
@@ -27,7 +28,7 @@ export default function home(props: HomeProps) {
             <Text style={styles.textTopCollections}>Top Collections</Text>
           </View>
 
-          
+          <TopCollectionList />
 
           {/* <BookCard /> */}
         </Content>
@@ -45,7 +46,7 @@ const styles = StyleSheet.create({
     height: 50,
     width: 300,
     marginTop: 10,
-    marginBottom: 7,
+    // marginBottom: 7,
     borderRadius: 50,
     fontSize: 30,
 
