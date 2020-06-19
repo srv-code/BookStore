@@ -21,7 +21,8 @@ export default function cart(props: CartProps) {
   const getInCartBooks = () => {
     const books: Book[] = [];
     getInCartBookIds().map((bookId: number) => {
-      books.push(getBookInfo(bookId));
+      let book = getBookInfo(bookId);
+      if (book) books.push();
     });
     return books;
   };
@@ -45,7 +46,7 @@ export default function cart(props: CartProps) {
         <View style={globalStyles.headerTitleView}>
           <Text style={globalStyles.headerTitleText}>Books In Your Cart</Text>
           {inCartBooks.length == 0 && (
-            <Text style={styles.messageBodyText}>None</Text>
+            <Text style={styles.messageBodyText}>Nothing till now</Text>
           )}
         </View>
 
@@ -73,7 +74,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   messageBodyText: {
-    color: 'lightgray',
+    marginTop: 20,
+    color: 'gray',
     fontSize: 18,
   },
 });
