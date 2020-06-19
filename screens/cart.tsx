@@ -49,13 +49,15 @@ export default function cart(props: CartProps) {
           )}
         </View>
 
-        <View style={styles.listContainer}>
-          <BookCardList
-            showPayButton
-            showCartRemoveButton
-            books={inCartBooks}
-          />
-        </View>
+        {inCartBooks.length > 0 && (
+          <View style={styles.listContainer}>
+            <BookCardList
+              showPayButton
+              showCartRemoveButton
+              books={inCartBooks}
+            />
+          </View>
+        )}
       </View>
     </Container>
   );

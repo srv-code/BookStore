@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Image, View } from 'react-native';
+import { StyleSheet, Image, View, ToastAndroid } from 'react-native';
 import { Card, CardItem, Text, Button, Icon } from 'native-base';
 import { Rating } from 'react-native-ratings';
 import { Book } from '../../../../apis/fetchBookDetails';
@@ -18,16 +18,25 @@ interface BookCardProps {
 export default function bookCard(props: BookCardProps) {
   const coverImageURI = require('../../../../assets/images/book-cover-sample.jpg');
 
-  const addToCartHandler = (bookId: number) => {
-    addBookToCart(bookId);
+  const addToCartHandler = (book: Book) => {
+    if (addBookToCart(book.id))
+      ToastAndroid.show(
+        `Book "${book.title}" by ${book.author} added to your cart.`,
+        ToastAndroid.LONG
+      );
+    else
+      ToastAndroid.show(
+        `Book "${book.title}" by ${book.author} is already added to your cart!`,
+        ToastAndroid.LONG
+      );
   };
 
-  const removeFromCartHandler = (bookId: number) => {
-    removeBookFromCart(bookId);
+  const removeFromCartHandler = (book: Book) => {
+    removeBookFromCart(book.id);
   };
 
-  const purchaseHandler = (bookId: number) => {
-    console.log(`Purchased book: bookId=${bookId}`);
+  const purchaseHandler = (book: Book) => {
+    console.log(`Purchased book: bookId=${book.id}`);
   };
 
   return (
@@ -60,7 +69,7 @@ export default function bookCard(props: BookCardProps) {
           <Button
             iconLeft
             style={styles.button}
-            onPress={() => addToCartHandler(props.book.id)}>
+            onPress={() => addToCartHandler(props.book)}>
             <Icon name='cart' />
             <Text>Add to cart</Text>
           </Button>
@@ -70,7 +79,7 @@ export default function bookCard(props: BookCardProps) {
           <Button
             iconLeft
             style={styles.button}
-            onPress={() => purchaseHandler(props.book.id)}>
+            onPress={() => purchaseHandler(props.book)}>
             <Icon type='MaterialIcons' name='payment' />
             <Text>Continue & Pay</Text>
           </Button>
@@ -80,7 +89,7 @@ export default function bookCard(props: BookCardProps) {
           <Button
             iconLeft
             style={styles.button}
-            onPress={() => removeFromCartHandler(props.book.id)}>
+            onPress={() => removeFromCartHandler(props.book)}>
             <Icon type='MaterialIcons' name='remove-shopping-cart' />
             <Text>Remove from cart</Text>
           </Button>

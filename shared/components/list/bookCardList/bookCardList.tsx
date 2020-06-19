@@ -13,20 +13,21 @@ interface BookCardListProps {
 }
 
 export default function bookCardList(props: BookCardListProps) {
-  // console.log(
-  //   `bookCardList: %O, will load?: %O`,
-  //   props.books,
-  //   props.books.length > 0
-  // );
+  console.log(
+    `bookCardList: %O, will load?: %O`,
+    props.books,
+    props.books.length > 0
+  );
 
   return (
     <View>
       {props.books.length > 0 && (
         <FlatList
           horizontal={props.horizontal}
-          pagingEnabled={true}
+          pagingEnabled={false}
           showsHorizontalScrollIndicator={true}
-          legacyImplementation={false}
+          showsVerticalScrollIndicator={true}
+          legacyImplementation={true}
           style={styles.list}
           keyExtractor={(item: Book) => item.id.toString()}
           data={props.books}
