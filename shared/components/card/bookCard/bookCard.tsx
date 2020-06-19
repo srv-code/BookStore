@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Image, View, ToastAndroid } from 'react-native';
+import { StyleSheet, Image, View, ToastAndroid, Alert } from 'react-native';
 import { Card, CardItem, Text, Button, Icon } from 'native-base';
 import { Rating } from 'react-native-ratings';
 import { Book } from '../../../../apis/fetchBookDetails';
@@ -32,7 +32,14 @@ export default function bookCard(props: BookCardProps) {
   };
 
   const removeFromCartHandler = (book: Book) => {
-    removeBookFromCart(book.id);
+    Alert.alert(
+      'Remove book?',
+      `Remove the book "${book.title}" by ${book.author} from your cart?`,
+      [
+        { text: 'Yes, remove it', onPress: () => removeBookFromCart(book.id) },
+        { text: 'No, keep it' },
+      ]
+    );
   };
 
   const purchaseHandler = (book: Book) => {

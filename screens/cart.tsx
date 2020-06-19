@@ -5,18 +5,36 @@ import { getInCartBookIds } from '../apis/updatePurchaseDetails';
 import { Button, Container } from 'native-base';
 import BookCardList from '../shared/components/list/bookCardList/bookCardList';
 import { getBookInfo, Book } from '../apis/fetchBookDetails';
+// import { useIsFocused } from '@react-navigation/native';
 
-interface CartProps {}
+interface CartProps {
+  navigation: any;
+}
 
 export default function cart(props: CartProps) {
-  const showCartItems = () => {
-    const inCartBookIds = getInCartBookIds();
-    console.log(`inCartBookIds=${inCartBookIds}`);
-  };
+  // const showCartItems = () => {
+  //   const inCartBookIds = getInCartBookIds();
+  //   console.log(`inCartBookIds=${inCartBookIds}`);
+  // };
 
-  React.useEffect(() => {
-    console.log(`loaded cart screen`);
-  }, []);
+  // React.useEffect(() => {
+  //   console.log(`loaded cart screen`);
+  // }, []);
+
+  // React.useEffect(() => {
+  //   const unsubscribe = props.navigation.addListener('focus', () => {
+  //     // The screen is focused
+  //     // Call any action
+  //     console.log('Cart screen is focused');
+  //   });
+
+  //   // Return the function to unsubscribe from the event so it gets removed on unmount
+  //   return unsubscribe;
+  // }, [props.navigation]);
+
+  // const isFocused = useIsFocused();
+  // if(isFocused) 
+  //   console.log('Cart screen is focused');  
 
   const getInCartBooks = () => {
     const books: Book[] = [];
