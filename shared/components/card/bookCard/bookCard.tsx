@@ -21,12 +21,12 @@ export default function bookCard(props: BookCardProps) {
   const addToCartHandler = (book: Book) => {
     if (addBookToCart(book.id))
       ToastAndroid.show(
-        `Book "${book.title}" by ${book.author} added to your cart.`,
+        `Added: Book "${book.title}" by ${book.author}`,
         ToastAndroid.LONG
       );
     else
       ToastAndroid.show(
-        `Book "${book.title}" by ${book.author} is already added to your cart!`,
+        `Already added: Book "${book.title}" by ${book.author}`,
         ToastAndroid.LONG
       );
   };
